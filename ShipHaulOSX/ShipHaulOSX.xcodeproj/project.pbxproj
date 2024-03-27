@@ -16,6 +16,7 @@
 		0B202E102BB48909000FF901 /* ShipHaulOSXUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B202E0F2BB48909000FF901 /* ShipHaulOSXUITestsLaunchTests.swift */; };
 		0B202E1E2BB48CBC000FF901 /* libLookoutWebRenderer.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B202E1D2BB48CBC000FF901 /* libLookoutWebRenderer.dylib */; };
 		0B202E1F2BB48EEC000FF901 /* libLookoutWebRenderer.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 0B202E1D2BB48CBC000FF901 /* libLookoutWebRenderer.dylib */; };
+		0B202E222BB4A052000FF901 /* RendererWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0B202E212BB4A052000FF901 /* RendererWrapper.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,9 @@
 		0B202E0D2BB48909000FF901 /* ShipHaulOSXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipHaulOSXUITests.swift; sourceTree = "<group>"; };
 		0B202E0F2BB48909000FF901 /* ShipHaulOSXUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShipHaulOSXUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		0B202E1D2BB48CBC000FF901 /* libLookoutWebRenderer.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libLookoutWebRenderer.dylib; path = ../../../renderer/build/libLookoutWebRenderer.dylib; sourceTree = "<group>"; };
+		0B202E202BB4A051000FF901 /* ShipHaulOSX-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShipHaulOSX-Bridging-Header.h"; sourceTree = "<group>"; };
+		0B202E212BB4A052000FF901 /* RendererWrapper.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = RendererWrapper.mm; sourceTree = "<group>"; };
+		0B202E232BB4A0EC000FF901 /* RendererWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RendererWrapper.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +109,9 @@
 				0B202DF52BB48909000FF901 /* Assets.xcassets */,
 				0B202DFA2BB48909000FF901 /* ShipHaulOSX.entitlements */,
 				0B202DF72BB48909000FF901 /* Preview Content */,
+				0B202E212BB4A052000FF901 /* RendererWrapper.mm */,
+				0B202E202BB4A051000FF901 /* ShipHaulOSX-Bridging-Header.h */,
+				0B202E232BB4A0EC000FF901 /* RendererWrapper.hpp */,
 			);
 			path = ShipHaulOSX;
 			sourceTree = "<group>";
@@ -210,6 +217,7 @@
 				TargetAttributes = {
 					0B202DED2BB48907000FF901 = {
 						CreatedOnToolsVersion = 15.3;
+						LastSwiftMigration = 1530;
 					};
 					0B202DFE2BB48909000FF901 = {
 						CreatedOnToolsVersion = 15.3;
@@ -275,6 +283,7 @@
 			files = (
 				0B202DF42BB48907000FF901 /* ContentView.swift in Sources */,
 				0B202DF22BB48907000FF901 /* ShipHaulOSXApp.swift in Sources */,
+				0B202E222BB4A052000FF901 /* RendererWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,11 +443,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ShipHaulOSX/ShipHaulOSX.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShipHaulOSX/Preview Content\"";
+				DEVELOPMENT_TEAM = 82QWS5222D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = ../../../renderer/include;
@@ -453,6 +465,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OSamuelAlmeida.ShipHaulOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShipHaulOSX/ShipHaulOSX-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -462,11 +476,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ShipHaulOSX/ShipHaulOSX.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"ShipHaulOSX/Preview Content\"";
+				DEVELOPMENT_TEAM = 82QWS5222D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = ../../../renderer/include;
@@ -481,6 +498,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = OSamuelAlmeida.ShipHaulOSX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ShipHaulOSX/ShipHaulOSX-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
