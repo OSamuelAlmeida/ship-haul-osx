@@ -22,7 +22,7 @@
     std::string parsedText = parser.parse(htmlString);
     
     Renderer renderer;
-    renderer.drawText(context, parsedText, 0.0, 0.0); // Example x, y coordinates
+    renderer.drawText(context, parsedText, 0, 0); // Example x, y coordinates
 }
 
 @end

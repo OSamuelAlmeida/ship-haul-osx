@@ -2,7 +2,8 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HTMLRenderingView(htmlContent: "<h1>Hello, Brazil</h1>").background(Color(NSColor.white))
+        HTMLRenderingView(htmlContent: "<h1>Hello, Brazil</h1>").background(Color(NSColor.white)).frame(maxWidth: .infinity, maxHeight: .infinity)
+            .edgesIgnoringSafeArea(.all)
     }
 }
 
@@ -34,7 +35,10 @@ class CustomDrawingView: NSView {
         
         guard let context = NSGraphicsContext.current?.cgContext else { return }
         
-        // Create an instance of the Objective-C++ wrapper and call its method
+        context.translateBy(x: 0, y: bounds.height)
+        context.scaleBy(x: 1.0, y: -1.0)
+            
+        
         let wrapper = RendererWrapper()
         wrapper.renderHTML(htmlContent, in: context)
     }
